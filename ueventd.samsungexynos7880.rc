@@ -131,6 +131,11 @@
 /dev/smd4                 0660   system     radio
 /dev/ramdump_memshare     0660   system     radio
 
+# Vision (VPU, SCORE)
+/dev/vertex0             0660   media      media
+/dev/vertex1             0660   media      media
+/dev/iva_ctl             0660   media      media
+
 # Sensorhub IIO
 /dev/ssp_sensorhub        0660   system       system
 /dev/iio:device*          0660   system       system
