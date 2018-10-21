@@ -33,7 +33,6 @@ debug.atrace.tags.enableflags=0
 ro.security.vaultkeeper.feature=0
 ro.config.dmverity=false
 ro.config.kap=false
-ro.knox.enhance.zygote.aslr=1
 persist.sys.usb.config=mtp,adb
 persist.service.adb.enable=1
 persist.service.debuggable=1
