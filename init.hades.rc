@@ -1,0 +1,44 @@
+# Copyright (C) 2012 The Android Open Source Project
+# 
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+# Originally Coded by @mwilky Tkkg1994 @GrifoDev, enhanced by BlackMesa @XDAdevelopers
+# kanged and adapted to A 2017 series by Corsicanu
+#
+
+on boot
+    start kernelinit
+
+on property:sys.boot_completed=1
+    start dalvik	
+    start sysinit
+    start wakelock
+
+service kernelinit /sbin/kernelinit.sh
+    user root
+    seclabel u:r:init:s0
+    oneshot
+    disabled
+    
+service dalvik /sbin/dalvik.sh
+    class late_start
+    user root
+    seclabel u:r:init:s0
+    oneshot
+    disabled
+
+service sysinit /sbin/sysinit.sh
+    class late_start
+    user root
+    seclabel u:r:init:s0
+    oneshot
+    disabled
+
+service wakelock /sbin/wakelock.sh
+    class late_start
+    user root
+    seclabel u:r:init:s0
+    oneshot
+    disabled
+	
