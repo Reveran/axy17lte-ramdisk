@@ -1463,6 +1463,7 @@ service iod /system/bin/iod
 
 service vaultkeeperd /system/bin/vaultkeeperd
     class core
+    disabled
 
 # Barnswallow Daemon
 service bsd /system/bin/bsd
