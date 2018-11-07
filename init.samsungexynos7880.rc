@@ -1,3 +1,4 @@
+import init.spectrum.rc
 import init.samsungexynos7880.usb.rc
 import init.baseband.rc
 import init.wifi.rc
