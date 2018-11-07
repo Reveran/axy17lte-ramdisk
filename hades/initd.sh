@@ -13,6 +13,7 @@
 # limitations under the License.
 #
 # Originally Coded by Tkkg1994 @GrifoDev, enhanced by BlackMesa @XDAdevelopers
+# enhanced once again corsicanu @XDAdevelopers with some code from 6h0st@ghost.com.ro
 #
 
 RUN=/hades/busybox;
@@ -25,6 +26,7 @@ log_print() {
 }
 log_print "------------------------------------------------------"
 log_print "**hades initd script started at $( date +"%d-%m-%Y %H:%M:%S" )**"
+
 # Create init.d folder if not exist
 if [ ! -d /system/etc/init.d ]; then
 	mkdir -p /system/etc/init.d;
@@ -39,13 +41,9 @@ if [ ! -s $killer ]; then
 fi
 
 # Execute scripts
-if [[ ! -e /system/xbin/run-parts ]]; then
-/system/xbin/run-parts /system/etc/init.d
-else
 for FILE in /system/etc/init.d/*; do
 	sh $FILE >/dev/null
 done;
-fi
 
 # FS Triming
 $run fstrim -v /system

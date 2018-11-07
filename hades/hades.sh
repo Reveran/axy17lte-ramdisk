@@ -13,11 +13,11 @@
 # limitations under the License.
 #
 # Originally Coded by Tkkg1994 @GrifoDev, enhanced by BlackMesa @XDAdevelopers
-#
+# enhanced once again corsicanu @XDAdevelopers with some code from 6h0st@ghost.com.ro
 # resetprop by @nkk71 (R.I.P.), renamed to fakeprop to avoid Magisk conflicts
 #
 
-PATH=/sbin:/system/sbin:/system/bin:/system/xbin:/.phantom
+PATH=/sbin:/system/sbin:/system/bin:/system/xbin:/hades
 export PATH
 RUN=/hades/busybox;
 LOGFILE=/data/hades/boot.log
@@ -38,7 +38,7 @@ if [ ! -e /data/hades ]; then
 	chmod -R 755 /data/hades
 fi
 
-for FILE in /system/etc/init.d/*; do
+for FILE in /data/hades/*; do
 	$RUN rm -f $FILE
 done;
 
